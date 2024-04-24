@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ><title>Online Banking Login</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <!--Der Header soll die Seite strukturieren und bekommt entsprechende Style-->
+        <h1>Willkommen bei Beckbanking</h1>
+    </header>
+    
+    <div class="container">
+        <img src="bank_logo.png" alt="Bank Logo">
+        <!--Formularfelder (Textboxen, Button etc.) müssen in Form-Tags eingebettet werden-->
+        <form action="login.php" method="post">
+            <input type="text" name="Username" placeholder="Benutzername oder E-Mail" required>
+            <input type="password" name="password" placeholder="Passwort" required>
+            <label for="2fa">2-Faktor-Authentifizierung</label>
+            <input type="text" id="2fa" name="2fa" required>
+            <a href="forgot_passwort.html">Passwort vergessen?</a>
+            <button type="submit">Login</button>
+        </form>
+        <p>Alternativer Login mit Face-ID: <a href="face_id_login.html">Hier klicken</a></p>
+        <a href="https://www.beckbanking.com>Zurück zur Homepage"<a/>
+    </div>
+</body>
+</html>

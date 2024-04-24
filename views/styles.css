@@ -1,0 +1,95 @@
+.container {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 400px;
+}
+
+input[type="text"],
+input[type="password"],{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button{
+    background-color: grey;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a{
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+header{
+    background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aqua;
+    font-size: larger;
+    text-align: center;
+}
+
+footer{
+    background-color: lightgrey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    text-align: center;
+}
+
+i{
+    color: white;
+}
+
+a{
+    color:white;
+    text-decoration: none; 
+    font-size: larger;
+}
+
+i1{
+    color: grey;
+    font-size: xx-large;
+    text-align: center;
+}
+
+ /*Der folgende Style wirkt auf eine Class namens Flexcontainer
+Eine Class wird in der Styles.css immer mit einem führenden Punkt dargestellt.*/ 
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: lightgray;
+  }
+  
+/*Der folgende Style wirkt auf alle DIVS innerhalb eines Flex-Containers*/
+  .flex-container > div {
+    background-color: darkgray;
+    width: 456px;
+    margin: 10px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+main{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 30px;
+    font-size: 13px;
+    margin: 10px;
+    text-align: center;
+}
+
+title{
+    text-align: center;
+}
+    
