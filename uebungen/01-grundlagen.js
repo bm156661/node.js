@@ -123,4 +123,70 @@ console.log('Aufgabe 10');
 console.log('Eigene Aufgabe mit Wenn-Funktion / if-else-Ausdruck');
 
 let Geschlecht = 'w';
-let mwstSatz = (artikel === 'Lebensmittel') ? 7 : 19;
+let Anrede = (Geschlecht === 'w') ? 'Frau' : 'Mann';
+
+console.log('Die Anrede für ' + Geschlecht + ' ist: ' + Anrede);
+
+
+console.log('Aufgabe 11');
+console.log('Wenn der Gesamtbetrag des Einkaufs größer oder gleich 100 ist, beträgt der Rabatt 20%. Wenn der Gesamtbetrag des Einkaufs zwischen 50 und kleiner als 100 ist, beträgt der Rabatt 10%. Ansonsten gibt es keinen Rabatt.');
+
+let gesamtbetrag = 120;
+let rabatt;
+
+//Die if-Kontrollstruktur kann hier 3 Fälle unterscheiden. Dazu muss die if-Konrollstruktur geschachtelt werden.
+if (gesamtbetrag >= 100) {
+
+    //Wennn die Prüfung in den runden Klammern wahr ist, wird der Wert 20 zugewiesen.
+    rabatt = 20;
+}else{
+    if (gesamtbetrag >= 50) {
+        rabatt = 10;
+    }else{
+        //Wenn die Prüfung in den runden Klammern unwahr ist, wird der Wert 0 zugewiesen.
+        rabatt = 0;
+    }
+}
+//Die Variablen werden deklariert und der Gesamtbetrag mit dem Wert 120 inizialisiert.
+console.log('Bei einem Gesamtbetrag von ' + gesamtbetrag + ' Euro beträgt der Rabatt ' + rabatt + ' Prozent.')
+
+
+console.log('Aufgabe 12');
+console.log('Wenn der Gesamtbetrag des Einkaufs größer oder gleich 200 ist, ist der Versand kostenlos. Wenn der Gesamtbetrag des Einkaufs zwischen 100 und kleiner als 200 ist, betragen die Versandkosten 5 Euro. Ansonsten betragen die Versandkosten 10 Euro.');
+
+let einkaufswert = 50;
+let versandkosten;
+
+if (einkaufswert >= 200) {
+    versandkosten = 0;
+}else{
+    if (einkaufswert >= 100) {
+        versandkosten = 5;
+    }else{
+        versandkosten = 10;
+    }
+}
+
+console.log('Bei einem Einkaufswert von ' + einkaufswert + ' Euro betragen die Versandkosten ' + versandkosten + ' Euro.')
+
+
+console.log('Aufgabe 13');
+console.log('Frauen ab 18 zahlen 10 Euro Eintritt. Männer ab 18 zahlen 15 Euro Eintritt. Minderjährige zahlen 6 Euro.');
+
+let Alter = 18;
+let Eintritt;
+let geschlecht = 'm';
+
+if (Geschlecht === 'w' && Alter >= 18) {
+    Eintritt = 10;
+}
+
+if (Geschlecht === 'm' && Alter >= 18) {
+        Eintritt = 15;
+} 
+
+if (Alter < 18) {
+    Eintritt = 6;
+} 
+
+console.log('Bei einem Alter von ' + Alter + ' Jahren zahlt eine Person mit Geschlecht ' + geschlecht + ' ' + Eintritt + ' Euro.')
