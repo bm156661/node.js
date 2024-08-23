@@ -38,4 +38,5 @@ app.listen(PORT, HOST);
 //runden Klammern steht immer für eine Anweisung etwas zu tun.
 console.log(`Running on http://${HOST}:${PORT}`);
 
-require('./uebungen/01-grundlagen.js');
+//Mit der Funktion require wird die Datei in den runden Klammern eingelesen.
+require('./uebungen/02-boolean.js');
