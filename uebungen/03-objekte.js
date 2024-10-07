@@ -12,7 +12,7 @@ console.log('=======')
 //let...
 //Problem: Die EIgenschaften stehen in keinem Zusammenhang 
 //Um den Zusammenhang zwischen einzelnen Werten herzustellen, gibt es Klassen und Objekte
-//Zunächst legt der Programmierer zur Entwicklungszeit die Baupläne (Klassen) fes, nach denen Objekte zur Laufzeit erstellt werden. 
+//Zunächst legt der Programmierer zur Entwicklungszeit die Baupläne (Klassen) fest, nach denen Objekte zur Laufzeit erstellt werden. 
 //Und das geht so:
 
 class Schueler{
@@ -43,7 +43,7 @@ console.log('Nachname: ' + schueler2.Nachname + ', Vorname: ' + schueler2.Vornam
 
 //Um aus dem Bauplan (=Klasse) ein konkretes Objekt zu erzeugen, sind 3 Schritte notwendig:
 //1. DEKLARATION: let schueler 
-//                Bei der Deklaratin wird bekanntgegeben, dass es ein Objekt namens schueler geben soll. 
+//                Bei der Deklaration wird bekanntgegeben, dass es ein Objekt namens schueler geben soll. 
 //2. INSTANZIIERUNG: = new Schueler()
 //                     Bei Instanziierung werden Speicherzellen im Arbeitsspeicher reserviert, um Eigenschaftswerte aufzunehmen. 
 //3. INITIALISIERUNG: schueler.Nachname = 'Schmidt'
@@ -93,3 +93,30 @@ buch1.Genre = 'Psychothriller'
 buch1.Autor = 'Colleen Hoover'
 
 console.log('Buchtitel: ' + buch1.Buchtitel + ', Genre: ' + buch1.Genre + ', Autor*in: ' + buch1.Autor)
+
+console.log("Aufgabe Klausur")
+// 1a) 
+// Es soll das Volumen eines Würfels in Quadratzentimeter (cm3) ausgegeben werden. Arbeiten Sie mit einem Objekt und sprechenden Eigenschaften.
+// Geben Sie das Volumen in einem Antwortsatz auf der Konsole aus.
+
+//Das ist der Bauplan, aus dem im Folgenden die Würfel-Objekte erzeugt werden sollen. Ohne diese Klassendefinition (=Bauplan) können keine Objekte instanziiert werden.
+
+//NEU: Man kann die Berechnung auch zu einer Funktion innerhalb der Klasse abbilden. 
+//Dazu muss in die Klasse unterhalb des Constructors die Funktion BerechneVolumen() eingebaut werden.
+//Alternative Berechnung mit der Funktion BerechneVolumen():
+
+class Wuerfel{
+    constructor(){
+        this.Seitenlaenge 
+        this.Volumen
+    } 
+    BerechneVolumen(){
+        this.Volumen =  this.Seitenlaenge *  this.Seitenlaenge *  this.Seitenlaenge 
+    }
+}
+
+let wuerfel = new Wuerfel()
+wuerfel.Seitenlaenge = 20 
+this.Volumen = 
+
+console.log('Das Volumen des Würfels mit der Seitenlänge ' + wuerfel.Seitenlaenge + ' beträgt ' + this.Volumen + ' cm3.')
