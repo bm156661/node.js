@@ -61,6 +61,7 @@ class Zeugnisse {
         this.Gesellschaftslehre
         this.Sport
         this.Volkswirtschaftslehre
+        this.Klassenbeste
     }
 }
 
@@ -94,6 +95,7 @@ console.log('Der Schüler hat folgende Noten in den ausgewählten Fächern: Deut
 // 2d) NUR KLAUSURSCHREIBER
 // Berechnen Sie die Durchnittsnote Ihres Objekts. Geben Sie die Durchschnittsnote auf der Konsole aus.
 
+let durchschnitt = (zeugnisse.Deutsch + zeugnisse.Mathe + zeugnisse.Englisch + zeugnisse.Betriebswirtschaftslehre + zeugnisse.Wirtschaftsinformatik + zeugnisse.Gesellschaftslehre + zeugnisse.Sport + zeugnisse.Volkswirtschaftslehre)/8
 
 
 
@@ -108,6 +110,17 @@ console.log('Der Schüler hat folgende Noten in den ausgewählten Fächern: Deut
 // Beispiel der Anwendung von Math.min():
 // let x = Math.min(5, 10); --> Es werden 5 und 10 verglichen. x nimmt jetzt den Wert 5 an, da 5 der niedrigste der kommaseparierten Werte ist.
 
+let lisa = 3 // lokalen Variablen beginnen mit Kleinbuchstaben  
+let tom = 4
+let max = 5 
+
+if(durchschnitt < Math.min(lisa, tom, max)){ //Es wird im Zeugnis eine neue Eigenschaft ergänzt.
+    Zeugnisse.Klassenbeste = true
+    console.log('Lisa hat einen Durchschnitt von ' + durchschnitt + ' und sie ist Klassenbeste.')
+}else{
+    Zeugnisse.Klassenbeste = false 
+    console.log('Lisa hat einen Durchschnitt von ' + durchschnitt + ' und sie ist nicht Klassenbeste.')
+}
 
 
 
@@ -131,8 +144,9 @@ console.log("Aufgabe 3")
 // 3a)
 // Deklarieren, Instanziieren Sie ein Objekt mit allen genannten Eigenschaften. 
 
-class Zeitung{
-    constructor(){
+class Produkt{
+    constructor(){ //Eigenschaften beginnen immer mit Großbuchstaben
+        this.Art
         this.Rabatt
         this.NettoRechnungsbetrag
         this.MwSt
@@ -142,22 +156,29 @@ class Zeitung{
     }
 }
 
-let zeitung = new Zeitung()
+let produkt = new Produkt()
 
 // 3b
 // Initialisieren Sie Ihr Objekt mit den gegebenen Werten. 
 // Geben Sie die einen Anwortsatz auf der Konsole aus.
 
-zeitung.NettoRechnungsbetrag = 370
-zeitung.MwSt = 7
+produkt.NettoRechnungsbetrag = 370 //Bitte kein Komma sondern den Punkt für Nachkommastellen verwenden 
+produkt.MwSt = 0.07      
+produkt.Art = 'Zeitung'             //Bitte keine Einheit, zum Beispiel Euro dahinterschreiben 
 
+//Wenn die Produktart Zeitung ODER Lebensmittel ODER Buch ist, dann...
+if(produkt.Art === 'Zeitung' || produkt.Art === 'Lebensmittel' || produkt.Art === 'Buch'){
+    produkt.MwSt = 0.07
+}else{
+    produkt.MwSt = 0.19
+}
 
-console.log('Der Netto-Rechnungsbetrag beträgt ' + zeitung.NettoRechnungsbetrag + ' EUR und die MwSt beträgt ' + zeitung.MwSt + ' %.' )
+console.log('Der Netto-Rechnungsbetrag beträgt ' + produkt.NettoRechnungsbetrag + ' EUR und die MwSt beträgt ' + produkt.MwSt + ' %.' )
 
 // 3c)
 // Berechnen Sie die MwSt in einer sprechenden Variablen. Geben Sie einen Anwortsatz auf der Konsole aus.
 
-let MwSt = zeitung.NettoRechnungsbetrag * zeitung.MwSt / 100 
+let MwSt = produkt.NettoRechnungsbetrag * produkt.MwSt 
 
 console.log('Die Mehrwertsteuer betragen ' + MwSt + ' EUR.')
 
@@ -166,9 +187,9 @@ console.log('Die Mehrwertsteuer betragen ' + MwSt + ' EUR.')
 // Wenn die Produktart sich ändert, muss Ihre Berechnung sich anpassen.
 // Geben Sie den Wert in einen Anwortsatz auf der Konsole aus.
 
-zeitung.BruttoRechnungsbetrag = zeitung.NettoRechnungsbetrag + (zeitung.NettoRechnungsbetrag/100 * 7)
+produkt.BruttoRechnungsbetrag = produkt.NettoRechnungsbetrag + (produkt.NettoRechnungsbetrag * 0.07)
 
-console.log('Der Brutto-Rechnungsbetrag beträgt: ' + zeitung.BruttoRechnungsbetrag + 'EUR.')
+console.log('Der Brutto-Rechnungsbetrag beträgt: ' + produkt.BruttoRechnungsbetrag + 'EUR.')
 
 
 // 3e) NUR KLAUSURSCHREIBER
@@ -185,6 +206,13 @@ console.log('Der Brutto-Rechnungsbetrag beträgt: ' + zeitung.BruttoRechnungsbet
 //                                  500 | 2
 
 // Berechnen Sie das Skonto und geben Sie das Ergebnis auf der Konsole aus.
+
+produkt.Skonto
+
+if(produkt.BruttoRechnungsbetrag < 500) (produkt.Skonto = 2)
+if(produkt.BruttoRechnungsbetrag < 500) (produkt.Skonto = 2)
+if(produkt.BruttoRechnungsbetrag < 500) (produkt.Skonto = 2)
+if(produkt.BruttoRechnungsbetrag < 500) (produkt.Skonto = 2)
 
 console.log("Aufgabe 4") // NUR KLAUSURSCHREIBER
 
