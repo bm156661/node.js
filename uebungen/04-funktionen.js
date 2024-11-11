@@ -63,7 +63,7 @@ function berechneSchulnote(punkte){
     else if(punkte === 12)return '2+'
     else if(punkte === 11)return '2'
     else if(punkte === 10)return '2-'
-    else if(punkte === 09)return '3+'
+    else if(punkte === 9)return '3+'
     }
 
     let punkte = 10
