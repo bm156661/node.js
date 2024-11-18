@@ -17,6 +17,10 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
+
+//Es wird der App bekanntgegeben, wo die styles zu finden sind.
+app.use(express.static('public'))
+
 app.get('/', (req, res) => {
 
 	// res ist die Antwort des Servers an den Browser.
@@ -35,8 +39,44 @@ app.get('/', (req, res) => {
 //Der Server arbeitet dazu die Funktion app.get('agb)...ab.
 
 //Der Server gibt die geänderte EJS Seite an den Server zurück.
-app.get('agb',(req,res)=>{
+app.get('/agb',(req,res)=>{
 	res.render('agb.ejs',{});
+});
+
+app.get('/profil',(req,res)=>{
+	res.render('profil.ejs',{});
+});
+
+app.get('/postfach',(req,res)=>{
+	res.render('postfach.ejs',{});
+});
+
+app.get('/hilfe',(req,res)=>{
+	res.render('hilfe.ejs',{});
+});
+
+app.get('/index',(req,res)=>{
+	res.render('index.ejs',{});
+});
+
+app.get('/kontenuebersicht',(req,res)=>{
+	res.render('kontenuebersicht.ejs',{});
+});
+
+app.get('/ueberweisungAusfuehren',(req,res)=>{
+	res.render('ueberweisungAusfuehren.ejs',{});
+});
+
+app.get('/geldAnlegen',(req,res)=>{
+	res.render('geldAnlegen.ejs',{});
+});
+
+app.get('/kreditBeantragen',(req,res)=>{
+	res.render('kreditBeantragen.ejs',{});
+});
+
+app.get('/login',(req,res)=>{
+	res.render('login.ejs',{});
 });
 
 // Mit listen() wird der Server angewiesen, auf den angegebenen Host und
