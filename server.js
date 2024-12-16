@@ -1,7 +1,18 @@
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
+class Kunde{
+	constructor(){
+		this.Nachname
+		this.Vorname
+		this.benutzername
+		this.Kennwort
+	}
+}
+
+let kunde = new Kunde();
+kunde.Nachname = 'Kiff'
+kunde.Vorname = 'Pitt'
+kunde.benutzername = 'pk'
+kunde.Kennwort = '123'
+
 
 'use strict';
 
@@ -98,7 +109,9 @@ app.get('/kreditBeantragen',(req,res)=>{
 });
 
 app.get('/login',(req,res)=>{
-	res.render('login.ejs',{});
+	res.render('login.ejs',{
+		Meldung: 'Alles easy'
+	});
 });
 
 //Die Funktion app.post(...) wird abgearbeitet, wenn der Kunde auf dem Formular den Absenden-Button klickt.
@@ -128,6 +141,29 @@ let zinsen = betrag * zinssatz;
 		Meldung: 'Ihre Zinsen betragen: ' + zinsen
 	});
 });
+
+app.post('/login',(req,res)=>{
+	let benutzername = req.body.IdKunde;
+	console.log('login: Benutzername: ' + benutzername)
+	
+	let kennwort = req.body.Kennwort;
+	console.log('login: Kennwort ' + kennwort)
+
+	//Es muss geprüft werden, ob der Kunde mit diesem Benutzername das richtige Kennwort eingegeben hat
+	let meldung = '';
+
+	if(kunde.benutzername == benutzername && kunde.Kennwort == kennwort){
+		console.log('Die Zugangsdaten wurden korrekt eingegeben.')
+		meldung = 'Die Zugangsdaten wurden korrekt eingegeben.'
+	}else{
+		console.log('Die Zugangsdaten wurden NICHT korrekt eingegeben.')
+		meldung = 'Die Zugangsdaten wurden NICHT korrekt eingegeben.'
+	}
+	
+		res.render('login.ejs',{
+			Meldung: meldung
+		});
+	});
 
 // Mit listen() wird der Server angewiesen, auf den angegebenen Host und
 // Port zu lauschen.  

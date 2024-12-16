@@ -16,14 +16,17 @@
     </header>
     <!--Formularfelder (Textboxen, Button etc.) müssen in form-Tags eingebettet werden-->
     <main>
-        <form>
+        <form method="post">
             <!--Die Labels beschreiben die Textboxen. br bricht die Zeile um.-->
             <label>Benutzername</label><br>
-            <input><br>
+            <input name="IdKunde"><br>
             <label>Kennwort</label><br>
-            <input type="password"><br>
-            <button>Einloggen</button>
+            <!--type passwort markiert die Eingabe mit Sternchen-->
+            <input type="passwort" name="Kennwort"><br/>
+            <button formaction="/login">Einloggen</button>
         </form>
+        Besuchen sie gerne unsere Homepage
+        <p><%=Meldung %></p>
     </main>
     <footer>
         <p>Borken-Bank AG</p>
