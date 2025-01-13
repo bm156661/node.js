@@ -13,6 +13,23 @@ kunde.Vorname = 'Pitt'
 kunde.benutzername = 'pk'
 kunde.Kennwort = '123'
 
+class Kundenberater{
+	constructor(){
+		this.Nachname
+		this.Vorname
+		this.Telefonnummer
+		this.Mail
+		this.Bild
+	}
+}
+
+let kundenberater = new Kundenberater();
+kundenberater.Nachname = 'Pass'
+kundenberater.Vorname = 'Hildegard'
+kundenberater.Telefonnummer = '012345 67890'
+kundenberater.Mail = 'hildegard.pass@node-js.de'
+kundenberater.Bild = 'pass.jpg'
+
 
 'use strict';
 
