@@ -1,18 +1,26 @@
+//Klassendefinition des Kunden 
 class Kunde{
 	constructor(){
 		this.Nachname
 		this.Vorname
 		this.benutzername
 		this.Kennwort
+		this.IstEingeloggt
 	}
 }
 
+//Kundenobjekt deklariert und instanziiert
 let kunde = new Kunde();
+
+//Kundenobjekt initialisiert 
 kunde.Nachname = 'Kiff'
 kunde.Vorname = 'Pitt'
 kunde.benutzername = 'pk'
 kunde.Kennwort = '123'
+kunde.IstEingeloggt = 'false'
 
+
+//Klassendefinition des Kundenberaters
 class Kundenberater{
 	constructor(){
 		this.Nachname
@@ -23,7 +31,10 @@ class Kundenberater{
 	}
 }
 
+//Kundenberaterobjekt deklariert und instanziiert
 let kundenberater = new Kundenberater();
+
+//Kundenberaterobjekt initialisiert 
 kundenberater.Nachname = 'Pass'
 kundenberater.Vorname = 'Hildegard'
 kundenberater.Telefonnummer = '012345 67890'
@@ -43,7 +54,7 @@ const bodyParser = require('express');
 // Die Anweisungen werden von oben nach unten abgearbeitet. Der Wert 3000 wird von rechts nach links 
 // zugewiesen an die Konstante namens PORT. Das einfache Gleichheitszeichen lässt sich also übersetzen
 // mit "... wird zugewiesen an ..."
-const PORT = 3000;
+const PORT = 3001;
 
 // Der Wert '0.0.0.0' wird zugewiesen an eine Konstante namens HOST 
 const HOST = '0.0.0.0';
@@ -68,7 +79,16 @@ app.get('/', (req, res) => {
 	// Das res-Objekt kann noch mehr als nur eine Zeichenkette an den
 	// Browser zu senden. Das res-Objekt kann mit der Funktion render()
 	// eine HTML-Datei an den Browser senden.
-	res.render('index.ejs',{});
+	
+	if(kunde.IstEingeloggt){
+		//Wenn die Zugangsdaten korrekt sind, dann wird die angesurfte Seite gerendert.
+		res.render('index.ejs',{});
+
+	}else{
+		//Wenn die Zugangsdaten nicht korrekt sind, dann wird die login-Seite gerendert.
+		res.render('login.ejs',{});
+		Meldung: 'Melden sie sich zuerst an.'
+	}
 });
 
 //Wenn im Browser die Adresse .../agb aufgerufen wird, wird der Server aufgefordert, 
@@ -77,57 +97,121 @@ app.get('/', (req, res) => {
 
 //Der Server gibt die geänderte EJS Seite an den Server zurück.
 app.get('/agb',(req,res)=>{
-	res.render('agb.ejs',{});
+	if(kunde.IstEingeloggt){
+		//Wenn die Zugangsdaten korrekt sind, dann wird die angesurfte Seite gerendert.
+		res.render('agb.ejs',{});
+
+	}else{
+		//Wenn die Zugangsdaten nicht korrekt sind, dann wird die login-Seite gerendert.
+		res.render('login.ejs',{});
+		Meldung: 'Melden sie sich zuerst an.'
+	}
 });
 
 app.get('/profil',(req,res)=>{
-	res.render('profil.ejs',{});
+	if(kunde.IstEingeloggt){
+		//Wenn die Zugangsdaten korrekt sind, dann wird die angesurfte Seite gerendert.
+		res.render('profil.ejs',{});
+
+	}else{
+		//Wenn die Zugangsdaten nicht korrekt sind, dann wird die login-Seite gerendert.
+		res.render('login.ejs',{});
+		Meldung: 'Melden sie sich zuerst an.'
+	}
 });
 
 app.get('/postfach',(req,res)=>{
-	res.render('postfach.ejs',{});
+	if(kunde.IstEingeloggt){
+		//Wenn die Zugangsdaten korrekt sind, dann wird die angesurfte Seite gerendert.
+		res.render('postfach.ejs',{});
+
+	}else{
+		//Wenn die Zugangsdaten nicht korrekt sind, dann wird die login-Seite gerendert.
+		res.render('login.ejs',{});
+		Meldung: 'Melden sie sich zuerst an.'
+	}
 });
 
 app.get('/hilfe',(req,res)=>{
-	res.render('hilfe.ejs',{});
+	if(kunde.IstEingeloggt){
+		//Wenn die Zugangsdaten korrekt sind, dann wird die angesurfte Seite gerendert.
+		res.render('hilfe.ejs',{});
+
+	}else{
+		//Wenn die Zugangsdaten nicht korrekt sind, dann wird die login-Seite gerendert.
+		res.render('login.ejs',{});
+		Meldung: 'Melden sie sich zuerst an.'
+	}
 });
 
 app.get('/index',(req,res)=>{
-	res.render('index.ejs',{});
+	if(kunde.IstEingeloggt){
+		//Wenn die Zugangsdaten korrekt sind, dann wird die angesurfte Seite gerendert.
+		res.render('index.ejs',{});
+
+	}else{
+		//Wenn die Zugangsdaten nicht korrekt sind, dann wird die login-Seite gerendert.
+		res.render('login.ejs',{});
+		Meldung: 'Melden sie sich zuerst an.'
+	}
 });
 
 app.get('/kontenuebersicht',(req,res)=>{
-	res.render('kontenuebersicht.ejs',{});
+	if(kunde.IstEingeloggt){
+		//Wenn die Zugangsdaten korrekt sind, dann wird die angesurfte Seite gerendert.
+		res.render('kontenuebersicht.ejs',{});
+
+	}else{
+		//Wenn die Zugangsdaten nicht korrekt sind, dann wird die login-Seite gerendert.
+		res.render('login.ejs',{});
+		Meldung: 'Melden sie sich zuerst an.'
+	}
 });
 
 app.get('/ueberweisungAusfuehren',(req,res)=>{
-	res.render('ueberweisungAusfuehren.ejs',{});
+	if(kunde.IstEingeloggt){
+		//Wenn die Zugangsdaten korrekt sind, dann wird die angesurfte Seite gerendert.
+		res.render('ueberweisungAusfuehren.ejs',{});
+
+	}else{
+		//Wenn die Zugangsdaten nicht korrekt sind, dann wird die login-Seite gerendert.
+		res.render('login.ejs',{});
+		Meldung: 'Melden sie sich zuerst an.'
+	}
 });
 
 //Die Funktion app.get('geldAnlegen',...) wird abgearbeitet, wenn der Benutzer die Seite geldAnlegen im Browser ansurft.
 
 app.get('/geldAnlegen',(req,res)=>{
-
-	//Die Serverantwort an den Browser wird gerendert an den Browser zurückgegeben.
-	//Dazu wird die Funktion render() aufgerufen.
-
-	res.render('geldAnlegen.ejs',{
-
-//In der geldAnlegen.ejs gibt es den variablen Betrag und Laufzeit. Der Server übergibt die folgenden Werte an den Browser: 
-
-		Betrag: 130,
+	if(kunde.IstEingeloggt){
+		//Wenn die Zugangsdaten korrekt sind, dann wird die angesurfte Seite gerendert.
+		res.render('geldAnlegen.ejs',{
+			Betrag: 130,
 		Laufzeit: 3,
 		Meldung: ''
 	});
+
+	}else{
+		//Wenn die Zugangsdaten nicht korrekt sind, dann wird die login-Seite gerendert.
+		res.render('login.ejs',{});
+		Meldung: 'Melden sie sich zuerst an.'
+	}
+
+	//Die Serverantwort an den Browser wird gerendert an den Browser zurückgegeben.
+	//Dazu wird die Funktion render() aufgerufen.
 });
 
 app.get('/kreditBeantragen',(req,res)=>{
 	res.render('kreditBeantragen.ejs',{});
 });
 
+//Die App.get wird abgearbeitet, wenn die Seite im server angesurft wird
 app.get('/login',(req,res)=>{
+
+	kunde.IstEingeloggt = false;
+	console.log('kunde.IstEingeloggt: ' + kunde.IstEingeloggt)
 	res.render('login.ejs',{
-		Meldung: 'Alles easy'
+		Meldung: 'Bitte Benutzername und Kennwort eingeben'
 	});
 });
 
@@ -135,7 +219,7 @@ app.get('/login',(req,res)=>{
 
 app.post('/geldAnlegen',(req,res)=>{
 //Die Werte, die der Kunde im Formular eingegeben hat, werden an den Server gesendet.
-//Der Wert der variablen Betrag wird aus dem body der Kundenanfrage (req) ausgelesen und zugewiesen an die lokale Variable namens betrag.
+//Der Wert der variablen Betrag wird aus dem body der Kundenanfrage (req) ausgelesen und zugewiesen an die lokale Variable namens Betrag.
 
 let betrag = req.body.Betrag;
 console.log('geldAnlegen: Gewünschter Betrag: ' + Betrag + ' Euro')
@@ -159,6 +243,7 @@ let zinsen = betrag * zinssatz;
 	});
 });
 
+//Die App.post wird abgearbeitet, wenn das Formular auf der Seite abgesendet wird. 
 app.post('/login',(req,res)=>{
 	let benutzername = req.body.IdKunde;
 	console.log('login: Benutzername: ' + benutzername)
@@ -169,17 +254,30 @@ app.post('/login',(req,res)=>{
 	//Es muss geprüft werden, ob der Kunde mit diesem Benutzername das richtige Kennwort eingegeben hat
 	let meldung = '';
 
+	//Die Kontrollstruktur prüft auf die Korrektheit der Zugangsdaten 
 	if(kunde.benutzername == benutzername && kunde.Kennwort == kennwort){
 		console.log('Die Zugangsdaten wurden korrekt eingegeben.')
 		meldung = 'Die Zugangsdaten wurden korrekt eingegeben.'
+		kunde.IstEingeloggt = true;
+		console.log('kunde.IstEingeloggt: ' + kunde.IstEingeloggt)
+
+		//Wenn die Daten korrekt sind, dann wird die index-Seite gerendert.
+		res.render('index.ejs',{
+			Meldung: meldung
+		});
 	}else{
 		console.log('Die Zugangsdaten wurden NICHT korrekt eingegeben.')
 		meldung = 'Die Zugangsdaten wurden NICHT korrekt eingegeben.'
-	}
-	
+		kunde.IstEingeloggt = false;
+		console.log('kunde.IstEingeloggt: ' + kunde.IstEingeloggt)
+
+
+		//Wenn die Daten nicht korrekt sind, dann wird die login-seite erneut gerendert.
 		res.render('login.ejs',{
 			Meldung: meldung
 		});
+	}
+	
 	});
 
 // Mit listen() wird der Server angewiesen, auf den angegebenen Host und
